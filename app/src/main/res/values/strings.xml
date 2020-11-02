@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Begonet</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="flipping_started">Flipping Started...</string>
+    <string name="flipping_stopped">Flipping Stopped...</string>
+    <string name="project_owner">Project Owner</string>
+    <string name="project_title">Project Title</string>
+    <string name="project_history">Project is a non-profit organization founded by project owner in 2011 aiming to alleviate the plight of the destitute elderly and mentally disabled people. </string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="hyperlink">\n<a href="https://www.youtube.com/watch?v=mI7G9LJ6fNg">Continue as a Guest</a></string>
+    <string name="signUpBar">                          SignUp</string>
+    <string name="signup">SignUp</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="email_or_phone_number">Email or Phone Number</string>
+    <string name="skip">skip</string>
+    <string name="if_you_don_t_have_any_account_yet">If you don\'t have any account yet</string>
+    <string-array name="choose_role">
+        <item>Volunteer</item>
+        <item>Donor</item>
+        <item>NGO</item>
+    </string-array>
+</resources>

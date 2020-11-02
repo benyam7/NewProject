@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/blue</color>
+    <color name="colorPrimaryLight">@color/light_blue</color>
+    <color name="colorAccent">@color/yellow</color>
+
+    <color name="white">@android:color/white</color>
+    <color name="black">@android:color/black</color>
+
+    <!--    GREY COLORS-->
+    <color name="grey">#cccccc</color>
+    <color name="dark_grey">#6d6d6d</color>
+
+    <!--    BLUE COLORS-->
+    <color name="blue">#013e8f</color>
+    <color name="light_blue">#dee7f0</color>
+
+    <!--    YELLOW COLOR-->
+    <color name="yellow">#ffc300</color>
+
+
+
+</resources>
