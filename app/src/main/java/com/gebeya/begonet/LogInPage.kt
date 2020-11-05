@@ -23,6 +23,7 @@ import com.gebeya.begonet.data.model.LogIn
 import com.gebeya.begonet.framework.base.BaseActivity
 import com.gebeya.begonet.framework.util.DATABASE_NAME
 import kotlinx.android.synthetic.main.activity_log_in_page.*
+import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -37,6 +38,11 @@ class LogInPage : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in_page)
 
+        logInButton.setOnClickListener {
+
+            val intent = Intent(this, LandingPage::class.java)
+            startActivity(intent)
+        }
         /* val jsonobj = JSONObject()
 
          logInButton.setOnClickListener {

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Project">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="411dp"
+        android:layout_height="65dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="188dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="204dp"
+        android:layout_marginRight="204dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logowhite"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_three_line"
+        tools:ignore="VectorDrawableCompat" />
+
+
+    <Button
+        android:id="@+id/backHome"
+        style="@style/button"
+        android:layout_width="209dp"
+        android:layout_height="39dp"
+        android:background="@color/grey"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:text="@string/home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontalGL"
+        tools:ignore="VectorDrawableCompat" />
+
+    <Button
+        android:id="@+id/projectOwnerButton"
+        style="@style/button"
+        android:layout_width="209dp"
+        android:layout_height="39dp"
+        android:background="@color/colorAccent"
+        android:text="Project Owner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontalGL" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="61dp" />
+
+    <ImageView
+        android:id="@+id/projectImage"
+        android:layout_width="411dp"
+        android:layout_height="255dp"
+        android:background="#00AAFF"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backHome"
+        app:srcCompat="@drawable/kid"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="412dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/projectImage" />
+
+    <Button
+        android:id="@+id/joinNowButton"
+        style="@style/button"
+        android:layout_width="115dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/colorAccent"
+        android:text="@string/join_now"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/projectImage" />
+
+    <Button
+        android:id="@+id/donateButton"
+        style="@style/button"
+        android:layout_width="115dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorAccent"
+        android:text="Donate Now"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toBottomOf="@+id/projectImage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
+        android:text="@string/_132_joined"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/projectImage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="14 Left"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/projectImage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

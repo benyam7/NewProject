@@ -5,7 +5,7 @@
     <color name="colorAccent">@color/yellow</color>
 
     <color name="white">@android:color/white</color>
-    <color name="black">@android:color/black</color>
+    <color name="black">@android:color/secondary_text_light</color>
 
     <!--    GREY COLORS-->
     <color name="grey">#cccccc</color>

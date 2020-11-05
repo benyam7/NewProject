@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Begonet</string>
     <string name="pause">Pause</string>
     <string name="play">Play</string>
@@ -20,9 +20,45 @@
     <string name="email_or_phone_number">Email or Phone Number</string>
     <string name="skip">skip</string>
     <string name="if_you_don_t_have_any_account_yet">If you don\'t have any account yet</string>
+    <string name="skip_main">Skip</string>
+    <string name="about_begonet">About Begonet</string>
+    <string name="new_projects">New Projects</string>
+    <string name="bookmarked_project">Bookmarked Project</string>
+    <string name="setting">Setting</string>
+    <string name="nebiyu_zewdu">Nebiyu Zewdu</string>
+    <string name="_21_new">21 New</string>
+    <string name="_2">2</string>
+
     <string-array name="choose_role">
         <item>Volunteer</item>
         <item>Donor</item>
         <item>NGO</item>
     </string-array>
+
+    <string-array name="choose_language">
+        <item>English</item>
+        <item>Amharic</item>
+        <item>Arabic</item>
+        <item>Spanish</item>
+        <item>French</item>
+        <item>Russian</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="setting_page">Setting</string>
+    <string name="home">Home</string>
+    <string name="language">Language</string>
+    <string name="location">Location</string>
+    <string name="chat_active">Chat Active</string>
+    <string name="automatic_update">Automatic Update</string>
+    <string name="periodic_donation_reminder">Periodic Donation Reminder</string>
+    <string name="about_us">About Us</string>
+    <string name="begonet">Begonet</string>
+    <string name="begonet_description"><![CDATA[Begonet is a platform that connects individual or group of volunteers, Charity organizations, Donors, Sponsors & Those in need of support. It creates a volunteering opportunities, and anyone can provide materials, financial, professional sevice or Labor work.]]></string>
+    <string name="awards_and_recognitions">Awards and Recognitions</string>
+    <string name="best_of_the_best">Best of the Best</string>
+    <string name="bego_sew_award">Bego Sew Award</string>
+    <string name="national_theater_of_ethiopia">National Theater of Ethiopia</string>
+    <string name="join_now">Join Now</string>
+    <string name="_132_joined">132 Joined</string>
 </resources>
