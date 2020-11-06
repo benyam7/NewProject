@@ -6,7 +6,7 @@
     <string name="flipping_stopped">Flipping Stopped...</string>
     <string name="project_owner">Project Owner</string>
     <string name="project_title">Project Title</string>
-    <string name="project_history">Project is a non-profit organization founded by project owner in 2011 aiming to alleviate the plight of the destitute elderly and mentally disabled people. </string>
+    <string name="project_history">Save the Children is the world\'s leading independent organisation for children. We work in around 120 countries. We save children\'s lives; we fight for their rights; we help them fulfil their potential</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="hyperlink">\n<a href="https://www.youtube.com/watch?v=mI7G9LJ6fNg">Continue as a Guest</a></string>
@@ -31,7 +31,6 @@
 
     <string-array name="choose_role">
         <item>Volunteer</item>
-        <item>Donor</item>
         <item>NGO</item>
     </string-array>
 
@@ -39,9 +38,6 @@
         <item>English</item>
         <item>Amharic</item>
         <item>Arabic</item>
-        <item>Spanish</item>
-        <item>French</item>
-        <item>Russian</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

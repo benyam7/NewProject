@@ -3,6 +3,7 @@
 package com.gebeya.begonet
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -19,6 +20,7 @@ import com.gebeya.begonet.data.AppDatabase
 import com.gebeya.begonet.data.model.SignUp
 import com.gebeya.begonet.framework.base.BaseActivity
 import com.gebeya.begonet.framework.util.DATABASE_NAME
+import kotlinx.android.synthetic.main.activity_log_in_page.*
 import kotlinx.android.synthetic.main.activity_sign_up_page.*
 import org.json.JSONObject
 import java.util.*
@@ -36,6 +38,12 @@ class SignUpPage : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_page)
+
+        signUpButton.setOnClickListener {
+
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+        }
 
    /*    begonet_db = Room.databaseBuilder(
             this,

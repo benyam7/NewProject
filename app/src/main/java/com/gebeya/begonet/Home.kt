@@ -18,5 +18,11 @@ class Home : BaseActivity() {
             val intent = Intent(this, Project::class.java)
             startActivity(intent)
         }
+        threeLines.setOnClickListener {
+
+            val intent = Intent(this, LandingPage::class.java)
+            startActivity(intent)
+        }
     }
-}
+
+    }

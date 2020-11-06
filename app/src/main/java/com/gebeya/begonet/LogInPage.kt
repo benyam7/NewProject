@@ -40,7 +40,13 @@ class LogInPage : BaseActivity() {
 
         logInButton.setOnClickListener {
 
-            val intent = Intent(this, LandingPage::class.java)
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+        }
+
+        skipButton.setOnClickListener {
+
+            val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
         /* val jsonobj = JSONObject()

@@ -30,6 +30,12 @@ class MainActivity : BaseActivity() {
             startActivity(intent)
         }
 
+        skipText.setOnClickListener {
+
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+        }
+
 
 
       /*  viewPager = findViewById<View>(R.id.viewPager) as ViewPager

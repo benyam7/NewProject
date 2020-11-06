@@ -42,7 +42,7 @@
         tools:ignore="VectorDrawableCompat" />
 
     <TextView
-        android:id="@+id/skip"
+        android:id="@+id/skipText"
         style="@style/grey_label.title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
