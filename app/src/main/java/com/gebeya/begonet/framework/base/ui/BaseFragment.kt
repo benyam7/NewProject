@@ -5,7 +5,6 @@
 package com.addisfortune.printversion.base.ui
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -17,10 +16,6 @@ import androidx.annotation.Nullable
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.addisfortune.printversion.R
-import com.addisfortune.printversion.base.keyboard.KeyboardHelper
-import com.addisfortune.printversion.base.ktx.setScreenName
-import com.google.android.material.appbar.MaterialToolbar
 
 
 abstract class BaseFragment : Fragment() {
@@ -28,10 +23,8 @@ abstract class BaseFragment : Fragment() {
     private var mRootView: View? = null
     abstract val layoutId: Int
     open var title: String? = null
-    open var screenName: String? = null
 
     open var titleRes: Int = 0
-    private lateinit var helper: KeyboardHelper;
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,10 +32,10 @@ abstract class BaseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         mRootView = inflater.inflate(layoutId, container, false)
-        val toolbar = mRootView?.findViewById<MaterialToolbar>(R.id.materialToolbar)
-        if (toolbar != null) {
-            (activity as BaseActivity).setSupportActionBar(toolbar)
-        }
+//        val toolbar = mRootView?.findViewById<MaterialToolbar>(R.id.materialToolbar)
+//        if (toolbar != null) {
+//            (activity as BaseActivity).setSupportActionBar(toolbar)
+//        }
 
         return mRootView!!
     }
@@ -57,26 +50,11 @@ abstract class BaseFragment : Fragment() {
             getSupportActionBar()?.setTitle(titleRes)
         }
 
-        if (screenName != null && screenName!!.trim().isNotEmpty()) {
-            setScreenName(screenName!!)
-        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         mRootView = null
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        helper = KeyboardHelper(context)
-    }
-
-    override fun onStop() {
-        super.onStop()
-        if (view != null) {
-            helper.setImeVisibility(requireView(), false)
-        }
     }
 
     fun setHomeAsUp() {
