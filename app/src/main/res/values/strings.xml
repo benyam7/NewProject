@@ -59,4 +59,14 @@
     <string name="_132_joined">132 Joined</string>
 
     <string name="passwordProviderType">password</string>
+    <string name="fragmentSelectorChooseRole">Choose your role</string>
+    <string name="selectorFragmentNGO">NGO</string>
+    <string name="selectorFragmentVolunteer">Volunteer</string>
+    <string name="selectorFragmentNext">Next</string>
+    <string name="selectorFragmentTryAgain">Please try again</string>
+    <string name="authFragmentEmailSent">we sent you email, please verify and log in again!</string>
+    <string name="authFragmentFailedToSendEmail">Failed to send email verification, please try again</string>
+    <string name="authFragmentAuthCanceled">Auth Canceled!</string>
+    <string name="authFragmentCheckYourConnection">Please check your connection and try again.</string>
+    <string name="authFragmentUnknownError">Unknown error occurred, please try again.</string>
 </resources>

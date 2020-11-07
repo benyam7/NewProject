@@ -3,7 +3,7 @@
 //import androidx.appcompat.app.AppCompatActivity
 //import android.os.Bundle
 //import com.gebeya.begonet.fragments.AboutFragment
-//import com.gebeya.begonet.fragments.HomeFragment
+//import com.gebeya.begonet.ui.home.HomeFragment
 //import com.gebeya.begonet.fragments.adapters.ViewPagerAdapter
 //import kotlinx.android.synthetic.main.activity_home__about.*
 //

@@ -1,32 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-
-    <AutoCompleteTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="none"
-        />
-
-</com.google.android.material.textfield.TextInputLayout>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/logout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/roleSelector"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:hint="@string/fragmentSelectorChooseRole"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/phoneContainer"
+                >
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:id="@+id/phoneContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                app:layout_constraintEnd_toEndOf="@id/roleSelector"
+                app:layout_constraintStart_toStartOf="@id/roleSelector"
+                app:layout_constraintTop_toBottomOf="@id/roleSelector">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_ethiopia_flag" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/countryCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:background="@null"
+                    android:focusableInTouchMode="false"
+                    android:gravity="top"
+                    android:imeOptions="actionGo"
+                    android:inputType="number"
+                    android:letterSpacing="0.08"
+                    android:text="+251" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:hint="- - - - - - - - -"
+                    android:imeOptions="actionGo"
+                    android:inputType="phone"
+                    android:letterSpacing="0.09"
+                    android:maxLength="9"
+                    android:textSize="18sp"
+                    tools:targetApi="lollipop" />
+            </LinearLayout>
+
+<!--            <com.airbnb.lottie.LottieAnimationView-->
+<!--                android:id="@+id/selectorProgress"-->
+<!--                android:layout_width="48dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:elevation="2dp"-->
+<!--                android:visibility="gone"-->
+<!--                app:lottie_autoPlay="true"-->
+<!--                app:con="@id/phoneContainer"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/phoneContainer"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/actionToHome"-->
+<!--                app:lottie_loop="true"-->
+<!--             />-->
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/phoneContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="64dp"
+                android:text="@string/selectorFragmentNext"
+                android:id="@+id/actionToHome" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,7 +1,7 @@
 package com.gebeya.begonet.ui
 
 import com.gebeya.begonet.R
-import com.gebeya.begonet.framework.base.ui.BaseActivity
+import com.gebeya.begonet.base.BaseActivity
 
 class MainActivity : BaseActivity() {
     override val layoutId: Int

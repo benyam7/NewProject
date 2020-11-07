@@ -20,5 +20,13 @@
     <color name="yellowish">#FBF3D7</color>
 
 
+    <color name="material_spinner_box">
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:color="@color/colorPrimaryVariant" android:state_enabled="true" />
+        <item android:color="@color/colorPrimary" android:state_hovered="true" />
+        <item android:color="@color/colorPrimary" android:state_focused="true" />
+        <item android:color="@color/colorPrimaryVariant" />
+    </selector>
+    </color>
 
 </resources>

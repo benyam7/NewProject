@@ -2,7 +2,7 @@
  * Copyright (c) 2020. Independent News & Media Plc.
  */
 
-package com.addisfortune.printversion.base.ui
+package com.gebeya.begonet.base
 
 import android.annotation.SuppressLint
 import android.graphics.Color

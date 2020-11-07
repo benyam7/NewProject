@@ -6,12 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.addisfortune.printversion.base.ui.BaseFragment
+import com.gebeya.begonet.base.BaseFragment
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import com.gebeya.begonet.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class AuthFragment : BaseFragment() {
     override val layoutId: Int
@@ -66,42 +67,56 @@ class AuthFragment : BaseFragment() {
         if (requestCode == REQUEST_CODE) {
             val response = IdpResponse.fromResultIntent(data)
 
+
             if (resultCode == Activity.RESULT_OK) {
-                // sign in success
-                // if the user is using email, send verification link if not verified yet
-                if (response?.providerType == getString(R.string.passwordProviderType)) {
-                    if (auth.currentUser!!.isEmailVerified) {
-                        findNavController().navigate(R.id.actionAuthFragmentToSelectorFragment)
-                    } else {
-                        // send verification email
-                        auth.currentUser!!.sendEmailVerification()
-                            .addOnSuccessListener {
-                                Toast.makeText(requireContext(), "we sent you email, please verify and log in again!", Toast.LENGTH_LONG).show()
-                                logOut()
-                                authenticate()
-                            }
-                            .addOnFailureListener{
-                                Toast.makeText(requireContext(), "Failed to send email verification, please try again", Toast.LENGTH_LONG).show()
-                            }
 
+                checkIfAlreadySelectedRole(object : UserExistListener {
+                    override fun onUserExists() {
+                        findNavController().navigate(R.id.actionAuthFragmentToHomeFragment)
                     }
-                } else {
 
-                    findNavController().navigate(R.id.actionAuthFragmentToSelectorFragment)
-                }
+                    override fun onUserDoesntExist() {
+
+                        // sign in success
+                        // if the user is using email, send verification link if not verified yet
+                        if (response?.providerType == getString(R.string.passwordProviderType)) {
+                            if (auth.currentUser!!.isEmailVerified) {
+                                findNavController().navigate(R.id.actionAuthFragmentToSelectorFragment)
+                            } else {
+                                // send verification email
+                                auth.currentUser!!.sendEmailVerification()
+                                    .addOnSuccessListener {
+                                        Toast.makeText(requireContext(), getString(R.string.authFragmentEmailSent), Toast.LENGTH_LONG).show()
+                                        logOut()
+                                        authenticate()
+                                    }
+                                    .addOnFailureListener{
+                                        Toast.makeText(requireContext(), getString(R.string.authFragmentFailedToSendEmail), Toast.LENGTH_LONG).show()
+                                    }
+
+                            }
+                        } else {
+
+                            findNavController().navigate(R.id.actionAuthFragmentToSelectorFragment)
+                        }
+                    }
+
+                })
+
+
 
                 return
             } else {
                 when {
                     response == null -> {
-                        Toast.makeText(requireContext(), "Auth Canceled!", Toast.LENGTH_SHORT)
+                        Toast.makeText(requireContext(), getString(R.string.authFragmentAuthCanceled), Toast.LENGTH_SHORT)
                             .show()
                         return
                     }
                     response.error?.errorCode == ErrorCodes.NO_NETWORK -> {
                         Toast.makeText(
                             requireContext(),
-                            "Please check your connection and try again.",
+                            getString(R.string.authFragmentCheckYourConnection),
                             Toast.LENGTH_LONG
                         ).show()
                         return
@@ -109,7 +124,7 @@ class AuthFragment : BaseFragment() {
                     response.error?.errorCode == ErrorCodes.UNKNOWN_ERROR -> {
                         Toast.makeText(
                             requireContext(),
-                            "Unknown error occurred, please try again.",
+                            getString(R.string.authFragmentUnknownError),
                             Toast.LENGTH_LONG
                         ).show()
                         return
@@ -119,6 +134,29 @@ class AuthFragment : BaseFragment() {
         }
     }
 
+    private fun checkIfAlreadySelectedRole(userExistListener: UserExistListener) {
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        val db = FirebaseFirestore.getInstance()
+        db.collection("users")
+            .document("$uid")
+            .get()
+            .addOnSuccessListener {
+                if(it.exists()){
+                    userExistListener.onUserExists()
+                } else {
+                    userExistListener.onUserDoesntExist()
+                }
+            }
+
+            .addOnFailureListener{
+
+            }
+    }
+
+    interface UserExistListener {
+        fun onUserExists()
+        fun onUserDoesntExist()
+    }
     companion object {
         private const val REQUEST_CODE = 116
     }

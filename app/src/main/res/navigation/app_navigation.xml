@@ -23,8 +23,8 @@
         android:label="SelectorFragment"
         tools:layout="@layout/fragment_selector">
         <action
-            android:id="@+id/actionSelectorToAuth"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/actionSelectorFragmentToHomeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/authFragment"
@@ -34,5 +34,18 @@
         <action
             android:id="@+id/actionAuthFragmentToSelectorFragment"
             app:destination="@id/selectorFragment" />
+        <action
+            android:id="@+id/actionAuthFragmentToHomeFragment"
+            app:destination="@id/homeFragment"
+             />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gebeya.begonet.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionHomeFragmentToAuthFragment"
+            app:destination="@id/authFragment" />
     </fragment>
 </navigation>

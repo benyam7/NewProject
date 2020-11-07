@@ -1,5 +1,5 @@
 
-package  com.gebeya.begonet.framework.base.ui
+package  com.gebeya.begonet.base
 
 import android.content.Context
 import android.os.Bundle
