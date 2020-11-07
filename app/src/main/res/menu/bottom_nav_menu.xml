@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menuHome" />
+    <item
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/ic_about"
+        android:title="@string/menuAbout"
+        />
+<!--    <item-->
+<!--        android:id="@+id/newProjectFragment"-->
+<!--        android:icon="@drawable/ic_new"-->
+<!--        android:title="@string/menuNewProjects"-->
+<!--        />-->
+
+<!--    <item-->
+<!--        android:id="@+id/bookmarkedProjectsFragment"-->
+<!--        android:icon="@drawable/ic_bookmark"-->
+<!--        android:title="@string/menuBookmarks"-->
+<!--        />-->
+<!--    <item-->
+<!--        android:id="@+id/settingsFragment"-->
+<!--        android:icon="@drawable/ic_setting"-->
+<!--        android:title="@string/menuSettings" />-->
+</menu>

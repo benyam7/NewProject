@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/deciderFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.gebeya.begonet.ui.main.MainFragment"
+        android:id="@+id/deciderFragment"
+        android:name="com.gebeya.begonet.ui.decider.DeciderFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_decider">
         <action
-            android:id="@+id/actionMainFragmentToAuthFragment"
+            android:id="@+id/actionDeciderFragmentToAuthFragment"
             app:destination="@id/authFragment" />
         <action
-            android:id="@+id/actionMainFragmentToSelectorFragment"
+            android:id="@+id/actionDeciderFragmentToSelectorFragment"
             app:destination="@id/selectorFragment" />
     </fragment>
     <fragment
@@ -23,8 +23,8 @@
         android:label="SelectorFragment"
         tools:layout="@layout/fragment_selector">
         <action
-            android:id="@+id/actionSelectorFragmentToHomeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/acitonSelectorToMain"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/authFragment"
@@ -35,17 +35,21 @@
             android:id="@+id/actionAuthFragmentToSelectorFragment"
             app:destination="@id/selectorFragment" />
         <action
-            android:id="@+id/actionAuthFragmentToHomeFragment"
-            app:destination="@id/homeFragment"
-             />
+            android:id="@+id/actionAuthToMain"
+            app:destination="@id/mainFragment" />
     </fragment>
+
+    <include app:graph="@navigation/bottom_nav" />
+
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.gebeya.begonet.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/actionHomeFragmentToAuthFragment"
-            app:destination="@id/authFragment" />
-    </fragment>
+        android:id="@+id/mainFragment"
+        android:name="com.gebeya.begonet.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"
+        />
+
+
+
+
+
 </navigation>

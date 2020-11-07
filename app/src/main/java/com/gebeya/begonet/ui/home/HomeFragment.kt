@@ -19,14 +19,14 @@ class HomeFragment: BaseFragment () {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        logout.setOnClickListener{
-            logOut()
-        }
+//        logout.setOnClickListener{
+//            logOut()
+//        }
     }
 
     private fun logOut(){
         AuthUI.getInstance()
             .signOut(requireContext())
-        findNavController().navigate(R.id.actionHomeFragmentToAuthFragment)
+
     }
 }

@@ -72,11 +72,10 @@ class AuthFragment : BaseFragment() {
 
                 checkIfAlreadySelectedRole(object : UserExistListener {
                     override fun onUserExists() {
-                        findNavController().navigate(R.id.actionAuthFragmentToHomeFragment)
+                        findNavController().navigate(R.id.actionAuthToMain)
                     }
 
                     override fun onUserDoesntExist() {
-
                         // sign in success
                         // if the user is using email, send verification link if not verified yet
                         if (response?.providerType == getString(R.string.passwordProviderType)) {
@@ -96,11 +95,9 @@ class AuthFragment : BaseFragment() {
 
                             }
                         } else {
-
                             findNavController().navigate(R.id.actionAuthFragmentToSelectorFragment)
                         }
                     }
-
                 })
 
 

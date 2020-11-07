@@ -2,10 +2,12 @@ package com.gebeya.begonet.ui.main
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.fragment.findNavController
-import com.gebeya.begonet.base.BaseFragment
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import com.gebeya.begonet.R
-import com.google.firebase.auth.FirebaseAuth
+import com.gebeya.begonet.base.BaseFragment
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment() {
     override val layoutId: Int
@@ -13,16 +15,9 @@ class MainFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binds()
+        bottomAppNavigationView.labelVisibilityMode = LabelVisibilityMode.LABEL_VISIBILITY_LABELED
+        val navController =
+            Navigation.findNavController(requireActivity(), R.id.buttomNavHostContainerFragment)
+        NavigationUI.setupWithNavController(bottomAppNavigationView, navController)
     }
-
-    private fun binds() {
-        if(FirebaseAuth.getInstance().currentUser == null){
-            findNavController().navigate(R.id.actionMainFragmentToAuthFragment)
-        } else {
-            findNavController().navigate(R.id.actionMainFragmentToSelectorFragment)
-        }
-    }
-
-
 }

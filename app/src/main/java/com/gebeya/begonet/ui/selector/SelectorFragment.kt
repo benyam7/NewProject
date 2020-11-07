@@ -25,8 +25,12 @@ class SelectorFragment : BaseFragment() {
     }
 
     private fun binds() {
-        val items = arrayOf(getString(R.string.selectorFragmentVolunteer),
-            getString(R.string.selectorFragmentNGO))
+
+        val items = arrayOf(
+            getString(R.string.selectorFragmentVolunteer),
+            getString(R.string.selectorFragmentNGO)
+        )
+
         adapter = ArrayAdapter(requireContext(), R.layout.item_role, items)
         (roleSelector.editText as? AutoCompleteTextView)?.setAdapter(adapter)
 
@@ -34,7 +38,7 @@ class SelectorFragment : BaseFragment() {
 //            selectorProgress.visibility = View.VISIBLE
             save(object : SaveUserDataListener {
                 override fun onUserDataSaved() {
-                    findNavController().navigate(R.id.actionSelectorFragmentToHomeFragment)
+                    findNavController().navigate(R.id.acitonSelectorToMain)
                 }
 
                 override fun onFailure() {

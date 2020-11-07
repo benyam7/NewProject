@@ -69,4 +69,9 @@
     <string name="authFragmentAuthCanceled">Auth Canceled!</string>
     <string name="authFragmentCheckYourConnection">Please check your connection and try again.</string>
     <string name="authFragmentUnknownError">Unknown error occurred, please try again.</string>
+    <string name="menuHome">Home</string>
+    <string name="menuAbout">About</string>
+    <string name="menuSettings">Settings</string>
+    <string name="menuNewProjects">New Projects</string>
+    <string name="menuBookmarks">Bookmarked Projects</string>
 </resources>
