@@ -40,8 +40,9 @@ class AuthFragment : BaseFragment() {
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(getAuthProvidersList())
-//                .setLogo(R.drawable.begonet_logo)
+                .setLogo(R.drawable.logoblue)
                 .setIsSmartLockEnabled(false)
+                .setTheme(R.style.LoginTheme)
                 .build(), REQUEST_CODE
         )
     }
@@ -85,6 +86,7 @@ class AuthFragment : BaseFragment() {
 
                     }
                 } else {
+
                     findNavController().navigate(R.id.actionAuthFragmentToSelectorFragment)
                 }
 

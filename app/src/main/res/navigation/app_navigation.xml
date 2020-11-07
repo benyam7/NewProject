@@ -21,7 +21,11 @@
         android:id="@+id/selectorFragment"
         android:name="com.gebeya.begonet.ui.selector.SelectorFragment"
         android:label="SelectorFragment"
-        tools:layout="@layout/fragment_selector"/>
+        tools:layout="@layout/fragment_selector">
+        <action
+            android:id="@+id/actionSelectorToAuth"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/authFragment"
         android:name="com.gebeya.begonet.ui.auth.AuthFragment"
