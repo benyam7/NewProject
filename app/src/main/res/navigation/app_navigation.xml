@@ -16,6 +16,9 @@
         <action
             android:id="@+id/actionDeciderFragmentToSelectorFragment"
             app:destination="@id/selectorFragment" />
+        <action
+            android:id="@+id/action_deciderFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/selectorFragment"
@@ -38,8 +41,6 @@
             android:id="@+id/actionAuthToMain"
             app:destination="@id/mainFragment" />
     </fragment>
-
-    <include app:graph="@navigation/bottom_nav" />
 
     <fragment
         android:id="@+id/mainFragment"

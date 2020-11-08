@@ -8,9 +8,9 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.gebeya.begonet.R
 import com.gebeya.begonet.base.BaseFragment
-import com.gebeya.begonet.base.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import kotlinx.android.synthetic.main.fragment_selector.*
 
 class SelectorFragment : BaseFragment() {
@@ -35,9 +35,10 @@ class SelectorFragment : BaseFragment() {
         (roleSelector.editText as? AutoCompleteTextView)?.setAdapter(adapter)
 
         actionToHome.setOnClickListener {
-//            selectorProgress.visibility = View.VISIBLE
+            selectorProgress.visibility = View.VISIBLE
             save(object : SaveUserDataListener {
                 override fun onUserDataSaved() {
+                    selectorProgress.visibility = View.INVISIBLE
                     findNavController().navigate(R.id.acitonSelectorToMain)
                 }
 
@@ -63,13 +64,11 @@ class SelectorFragment : BaseFragment() {
         db.collection("users")
             .document("${FirebaseAuth.getInstance().currentUser?.uid}")
             .set(
-                User(
-                    name = name,
-                    email = email,
-                    phoneNumber = "+251$phoneNum",
-                    role = role,
-                    userId = "${FirebaseAuth.getInstance().currentUser?.uid}"
-                )
+                mapOf("name" to name,
+                    "email" to email,
+                    "phoneNumber" to "+251$phoneNum",
+                    "userId" to "${FirebaseAuth.getInstance().currentUser?.uid}",
+                    "role" to role), SetOptions.merge()
             )
             .addOnSuccessListener {
                 saveUserDataListener.onUserDataSaved()

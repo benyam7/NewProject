@@ -72,6 +72,11 @@
     <string name="menuHome">Home</string>
     <string name="menuAbout">About</string>
     <string name="menuSettings">Settings</string>
-    <string name="menuNewProjects">New Projects</string>
+    <string name="menuNewProjects">Projects</string>
     <string name="menuBookmarks">Bookmarked Projects</string>
+    <string name="menuProfile">Profile</string>
+
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyB8fLnyeWyIxfVOOvvXrixZzDTzTeZk-oo</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

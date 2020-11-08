@@ -5,24 +5,25 @@
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
         android:title="@string/menuHome" />
+
+    <item
+        android:id="@+id/projectsFragment"
+        android:icon="@drawable/ic_new"
+        android:title="@string/menuNewProjects"
+        />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_persono"
+        android:title="@string/menuProfile"
+        />
     <item
         android:id="@+id/aboutFragment"
         android:icon="@drawable/ic_about"
         android:title="@string/menuAbout"
         />
-<!--    <item-->
-<!--        android:id="@+id/newProjectFragment"-->
-<!--        android:icon="@drawable/ic_new"-->
-<!--        android:title="@string/menuNewProjects"-->
-<!--        />-->
-
-<!--    <item-->
-<!--        android:id="@+id/bookmarkedProjectsFragment"-->
-<!--        android:icon="@drawable/ic_bookmark"-->
-<!--        android:title="@string/menuBookmarks"-->
-<!--        />-->
-<!--    <item-->
-<!--        android:id="@+id/settingsFragment"-->
-<!--        android:icon="@drawable/ic_setting"-->
-<!--        android:title="@string/menuSettings" />-->
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/menuSettings" />
 </menu>

@@ -5,9 +5,15 @@ data class User(
     val phoneNumber: String = "",
     val userId : String = "",
     val email: String = "",
-    val role: String = ""
+    val role: String = "",
+    val profilePicUri: String = ""
 )
 
 enum class Role {
     NGO, VOLUNTEER
 }
+
+data class ProjectStatus(
+    val status: String = "",
+    val imageUrl: Int = -1
+)
